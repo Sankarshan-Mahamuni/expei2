@@ -80,8 +80,8 @@ def main():
        ka_values = np.asarray(ka_values, dtype=float)
 
 # Display calculated Ka values
-      formatted_ka_values = [f"{value:.4f}" for value in ka_values]
-      st.write("Calculated Ka values:", formatted_ka_values)
+       formatted_ka_values = [f"{value:.4f}" for value in ka_values]
+       st.write("Calculated Ka values:", formatted_ka_values)
 
 
     # Create a DataFrame from the observation table
