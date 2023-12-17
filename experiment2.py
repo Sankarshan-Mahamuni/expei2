@@ -5,7 +5,7 @@ import pandas as pd
 import math
 import matplotlib.pyplot as plt
 
-st.title('EXPERIMENT 2')
+st.title('EXPERIMENT haha haha haha 2')
 st.header('Determine dissociation constant Ka of Weak acid (Acetic acid) using pH-meter.')
 st.header('Prior Concepts:')
 st.write('Concentration of H+ and OH-, pH, pOH, pKa, pKb. Concept of strong andweak acids and bases, Buffers: acidic and basic, dissociation constant (Ka)')
