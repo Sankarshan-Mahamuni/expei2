@@ -52,8 +52,11 @@ def calculate_ka(pH_at_endpoint):
     # Assuming the initial concentration of weak acid is 0.1 M (adjust as needed)
     initial_concentration_acid = 0.1
 
+    # Ensure pH_at_endpoint is a NumPy array
+    pH_array = np.asarray(pH_at_endpoint, dtype=float)
+
     # Calculate dissociation constant (Ka)
-    ka = 10 ** (np.array(pH_at_endpoint, dtype=float) - np.log10(initial_concentration_acid))
+    ka = 10 ** (pH_array - np.log10(initial_concentration_acid))
     return ka
 
 def main():
