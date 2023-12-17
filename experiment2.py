@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
-st.title('EXPERIMENT haha haha haha 2')
+st.title('EXPERIMENT 2')
 st.header('Determine dissociation constant Ka of Weak acid (Acetic acid) using pH-meter.')
 st.header('Prior Concepts:')
 st.write('Concentration of H+ and OH-, pH, pOH, pKa, pKb. Concept of strong and weak acids and bases, Buffers: acidic and basic, dissociation constant (Ka)')
@@ -59,6 +59,8 @@ def calculate_ka(pH_at_endpoint):
     ka = 10 ** (pH_array - np.log10(initial_concentration_acid))
     return ka
 
+# ... (Previous code remains unchanged)
+
 def main():
     st.title("Dissociation Constant (Ka) Determination for Weak Acid (e.g., Acetic Acid)")
 
@@ -76,16 +78,14 @@ def main():
         observations["Volume of NaOH added"].append(volume_naoh)
         observations["pH"].append(ph_value)
 
-       # Calculate Ka using the provided function
+    # Calculate Ka using the provided function
     ka_values = calculate_ka(observations["pH"])
 
-# Ensure ka_values is a NumPy array with float dtype
+    # Ensure ka_values is a NumPy array with float dtype
     ka_values = np.asarray(ka_values, dtype=float)
-
 
     formatted_ka_values = [f"{value:.4f}" for value in ka_values]
     st.write("Calculated Ka values:", formatted_ka_values)
-
 
     # Create a DataFrame from the observation table
     df_observations = pd.DataFrame(observations)
@@ -94,8 +94,11 @@ def main():
     st.dataframe(df_observations)
 
     # Plot pH vs. Volume graph
+    volume_naoh_array = df_observations["Volume of NaOH added"].to_numpy()
+    ph_array = df_observations["pH"].to_numpy()
+
     plt.figure(figsize=(8, 6))
-    plt.plot(df_observations["Volume of NaOH added"], df_observations["pH"], marker='o')
+    plt.plot(volume_naoh_array, ph_array, marker='o')
     plt.title("pH vs. Volume of NaOH Added")
     plt.xlabel("Volume of NaOH added (ml)")
     plt.ylabel("pH")
@@ -104,4 +107,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
