@@ -103,7 +103,9 @@ def main():
     ka_values = calculate_ka(observations["pH"])
 
     # Display calculated Ka values
-    st.write("Calculated Ka values:", ka_values)
+    # Display calculated Ka values
+st.write("Calculated Ka values:", [f"{value:.4f}" for value in ka_values])
+
 
     # Create a DataFrame from the observation table
     df_observations = pd.DataFrame(observations)
