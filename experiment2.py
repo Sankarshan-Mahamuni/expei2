@@ -104,7 +104,7 @@ def main():
 
     # Display calculated Ka values
     # Display calculated Ka values
-st.write("Calculated Ka values:", [f"{value:.4f}" for value in ka_values])
+    st.write("Calculated Ka values:", [f"{value:.4f}" for value in ka_values])
 
 
     # Create a DataFrame from the observation table
