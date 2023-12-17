@@ -102,9 +102,8 @@ def main():
     # Calculate Ka using the provided function
     ka_values = calculate_ka(observations["pH"])
 
-    # Now you can use the ka_values as needed
+    # Display calculated Ka values
     st.write("Calculated Ka values:", ka_values)
-
 
     # Create a DataFrame from the observation table
     df_observations = pd.DataFrame(observations)
@@ -121,19 +120,17 @@ def main():
     st.pyplot(plt)
     st.write('pH = -log(Ka)')
 
-
-    # Calculate dissociation constant (Ka) based on user input
-    #end_point_index = st.number_input("Enter the observation index at the end point of titration:", min_value=1, step=1)
-    #pH_at_end_point = df_observations.at[end_point_index - 1, "pH"] if "pH" in df_observations.columns else None
-    #st.write('pH = -log(Ka)')
-
-    # Display the result
-    #st.header("Result:")
-    #st.write("1. End Point of Titration:", df_observations.at[end_point_index - 1, "Volume of NaOH added"], "ml")
-    #st.write("2. pH at End Point:", pH_at_end_point)
-    #if pH_at_end_point is not None:
-        #dissociation_constant = calculate_ka(pH_at_end_point)
-        #st.write("3. Dissociation Constant of Weak Acid (Ka):", dissociation_constant)
+    # Additional code (commented out) for calculating Ka at the end point
+    # Uncomment and customize as needed
+    # end_point_index = st.number_input("Enter the observation index at the end point of titration:", min_value=1, step=1)
+    # pH_at_end_point = df_observations.at[end_point_index - 1, "pH"] if "pH" in df_observations.columns else None
+    # st.write('pH = -log(Ka)')
+    # st.header("Result:")
+    # st.write("1. End Point of Titration:", df_observations.at[end_point_index - 1, "Volume of NaOH added"], "ml")
+    # st.write("2. pH at End Point:", pH_at_end_point)
+    # if pH_at_end_point is not None:
+    #     dissociation_constant = calculate_ka(pH_at_end_point)
+    #     st.write("3. Dissociation Constant of Weak Acid (Ka):", dissociation_constant)
 
 if __name__ == "__main__":
     main()
