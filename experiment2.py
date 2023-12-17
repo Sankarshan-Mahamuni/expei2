@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import math
 import matplotlib.pyplot as plt
+import numpy as np
 
 st.title('EXPERIMENT haha haha haha 2')
 st.header('Determine dissociation constant Ka of Weak acid (Acetic acid) using pH-meter.')
@@ -78,7 +79,7 @@ def calculate_ka(pH_at_endpoint):
     initial_concentration_acid = 0.1
 
     # Calculate dissociation constant (Ka)
-    ka = 10 ** (pH_at_endpoint - math.log10(initial_concentration_acid))
+    ka = 10 ** (np.array(pH_at_endpoint) - np.log10(initial_concentration_acid))
     return ka
 
 def main():
