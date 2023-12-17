@@ -73,8 +73,8 @@ def main():
         observations["Volume of NaOH added"].append(volume_naoh)
         observations["pH"].append(ph_value)
 
-   # Calculate Ka using the provided function
-       ka_values = calculate_ka(observations["pH"])
+       # Calculate Ka using the provided function
+        ka_values = calculate_ka(observations["pH"])
 
 # Ensure ka_values is a NumPy array with float dtype
        ka_values = np.asarray(ka_values, dtype=float)
