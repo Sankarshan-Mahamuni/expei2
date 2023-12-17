@@ -99,6 +99,13 @@ def main():
         observations["Volume of NaOH added"].append(volume_naoh)
         observations["pH"].append(ph_value)
 
+    # Calculate Ka using the provided function
+    ka_values = calculate_ka(observations["pH"])
+
+    # Now you can use the ka_values as needed
+    st.write("Calculated Ka values:", ka_values)
+
+
     # Create a DataFrame from the observation table
     df_observations = pd.DataFrame(observations)
 
