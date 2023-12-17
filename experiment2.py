@@ -79,7 +79,7 @@ def calculate_ka(pH_at_endpoint):
     initial_concentration_acid = 0.1
 
     # Calculate dissociation constant (Ka)
-    ka = 10 ** (np.array(pH_at_endpoint) - np.log10(initial_concentration_acid))
+    ka = 10 ** (np.array(pH_at_endpoint, dtype=float) - np.log10(initial_concentration_acid))
     return ka
 
 def main():
