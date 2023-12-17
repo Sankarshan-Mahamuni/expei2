@@ -74,14 +74,14 @@ def main():
         observations["pH"].append(ph_value)
 
        # Calculate Ka using the provided function
-        ka_values = calculate_ka(observations["pH"])
+     ka_values = calculate_ka(observations["pH"])
 
 # Ensure ka_values is a NumPy array with float dtype
-       ka_values = np.asarray(ka_values, dtype=float)
+    ka_values = np.asarray(ka_values, dtype=float)
 
-# Display calculated Ka values
-       formatted_ka_values = [f"{value:.4f}" for value in ka_values]
-       st.write("Calculated Ka values:", formatted_ka_values)
+
+    formatted_ka_values = [f"{value:.4f}" for value in ka_values]
+    st.write("Calculated Ka values:", formatted_ka_values)
 
 
     # Create a DataFrame from the observation table
